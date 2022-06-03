@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Container roundedSquare({
+Widget roundedSquare({
   double width = 150,
   double height = 150,
   required Color bgColor,
@@ -27,48 +27,57 @@ Container roundedSquare({
 void main() {
   runApp(
     MaterialApp(
-      home: Scaffold(
-        body: SafeArea(
-          child: Column(
-            //crossAxisAlignment: CrossAxisAlignment.center,
-            //mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(width: double.infinity),
-              SizedBox(
-                height: 10,
-              ),
-              roundedSquare(
-                  textColor: Colors.black,
-                  bgColor: Colors.yellow,
-                  text: "Square1"),
-              SizedBox(
-                height: 10,
-              ),
-              roundedSquare(
-                text: "Square2",
-                bgColor: Colors.orange,
-                textColor: Colors.blue,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              roundedSquare(
-                  bgColor: Colors.green,
-                  textColor: Colors.yellow,
-                  text: "Square3"),
-              SizedBox(
-                height: 10,
-              ),
-              roundedSquare(
-                  width: 200,
-                  height: 200,
-                  textColor: Colors.black,
-                  bgColor: Colors.yellow,
-                  text: "Square1"),
-            ],
-          ),
-        ),
-      ),
+      home: FirstWidget(),
     ),
   );
+}
+
+class FirstWidget extends StatelessWidget {
+  const FirstWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          //crossAxisAlignment: CrossAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Container(width: double.infinity),
+            SizedBox(
+              height: 10,
+            ),
+            roundedSquare(
+                textColor: Colors.pink,
+                bgColor: Colors.black,
+                text: "Square135"),
+            SizedBox(
+              height: 10,
+            ),
+            roundedSquare(
+              text: "Square241",
+              bgColor: Colors.orange,
+              textColor: Colors.blue,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            roundedSquare(
+                bgColor: Colors.green,
+                textColor: Colors.yellow,
+                text: "Square365"),
+            SizedBox(
+              height: 10,
+            ),
+            roundedSquare(
+                width: 200,
+                height: 200,
+                textColor: Colors.black,
+                bgColor: Colors.yellow,
+                text: "Square1"),
+          ],
+        ),
+      ),
+    );
+  }
 }
